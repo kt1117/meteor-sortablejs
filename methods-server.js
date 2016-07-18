@@ -21,7 +21,7 @@ Meteor.methods({
 			throw new Meteor.Error(403, 'Collection <' + collectionName + '> is not Sortable. Please add it to Sortable.collections in server code.');
 		}
 
-		check(ids, [String]);
+		check(ids, [ObjectId]);
 		check(sortField, String);
 		check(incDec, Number);
 		var selector = {_id: {$in: ids}}, modifier = {$inc: {}};
